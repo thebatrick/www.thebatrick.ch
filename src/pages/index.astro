@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import Button from '../components/Button.astro';
+
+
+import NjolaHome from '../images/njola02-removebg.png';
+import earthblender from '../images/earth02.png'
+--- 
+
+<Layout title="Startseite" description="Das ist meine Startseite">
+	<div class="flex flex-row justify-between items-center">
+		<div class="w-1/2 flex justify-center items-center py-10 ">
+			<Image 
+			  src={NjolaHome}
+			  alt="Njola" 
+			  width={650} 
+			  height={425}
+			  quality="80"
+			  decoding="async"
+			  loading="lazy"
+			  format="webp"  
+			/>
+		</div>
+		<div class="w-1/2 flex flex-col justify-between items-start">
+			<div class="text-6xl mb-4">
+			  Visionen mit<br />
+			  Code und <span class="text-blue-700 dark:text-deeppink">Njola</span><br />
+			  zum Leben erwecken<br />
+			</div>
+			<div class="mb-6 leading-relaxed">
+				Der Samojede (russisch самоедская собака, transkribiert samojedskaja sobaka, 
+				Samojedenhund; gelegentlich auch als „Samojedenspitz“ bezeichnet) ist eine von der 
+				FCI anerkannte mittelgroße nordische Hunderasse.
+			</div>
+			<div class="flex items-center">
+			  <Button 
+			    url="https://www.instagram.com/p/Cuy68QJtTb4/" 
+			    title="Njola" 
+			    external={true}
+			  />
+			  <a href="mailto:patrick.geissbuehlerph2404@gmail.com"
+			     title="Email" 
+			     class="ml-8  text-dark dark:text-light underline rounded-lg border-2 
+				 	    border-solid border-transparent py-2 px-6 hover:border-dark
+					    dark:hover:border-light"
+			  >Kontakt
+			</a>
+		    </div>
+		</div>
+	</div>
+	
+
+	<div class="flex justify-center items-center">
+		<Image 
+			  src={earthblender}
+			  alt="Njola" 
+			  width={3840} 
+			  height={2160}
+			  quality="80"
+			  decoding="async"
+			  loading="lazy"
+			  format="webp"  
+			/>
+ </div>
+</Layout>
+
