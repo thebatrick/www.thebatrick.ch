@@ -25,19 +25,21 @@ import earthblender from '../images/earth02.png'
 		<div class="w-1/2 flex flex-col justify-between items-start">
 			<div class="text-6xl mb-4">
 			  Visionen mit<br />
-			  Code und <span class="text-blue-700 dark:text-deeppink">Njola</span><br />
+			  Code und <span 
+			    id="dynamic-header-text"
+			    class="text-blue-700 dark:text-deeppink">Njola</span><br /> 
+				<!-- Array liste ist unter /src/js/app.js -->
 			  zum Leben erwecken<br />
 			</div>
 			<div class="mb-6 leading-relaxed">
-				Der Samojede (russisch самоедская собака, transkribiert samojedskaja sobaka, 
-				Samojedenhund; gelegentlich auch als „Samojedenspitz“ bezeichnet) ist eine von der 
-				FCI anerkannte mittelgroße nordische Hunderasse.
+				Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et  
+	
 			</div>
 			<div class="flex items-center">
 			  <Button 
 			    url="https://www.instagram.com/p/Cuy68QJtTb4/" 
 			    title="Njola" 
-			    external={true}
+			    external={true} 
 			  />
 			  <a href="mailto:patrick.geissbuehlerph2404@gmail.com"
 			     title="Email" 
@@ -50,18 +52,5 @@ import earthblender from '../images/earth02.png'
 		</div>
 	</div>
 	
-
-	<div class="flex justify-center items-center">
-		<Image 
-			  src={earthblender}
-			  alt="Njola" 
-			  width={3840} 
-			  height={2160}
-			  quality="80"
-			  decoding="async"
-			  loading="lazy"
-			  format="webp"  
-			/>
- </div>
 </Layout>
 

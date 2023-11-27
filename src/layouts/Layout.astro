@@ -10,6 +10,7 @@ export interface Props {
 const { title, description } = Astro.props;
 ---
 
+
 <!doctype html>
 <html lang="de">
 	<head>
@@ -20,14 +21,16 @@ const { title, description } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{title}</title>
 	</head>
-	<body class="font-mono bg-light dark:bg-dark text-dark dark:text-light ">
+	<body class="font-mono bg-dee dark:bg-dark text-dark dark:text-light ">
 		<main class="md:container md:mx-auto w-full min-h-screen">
 			<header class="flex items-center justify-between px-4 py-8 font-medium">
 				<nav class="flex items-center justify-center gap-x-8 text-2xl">
 					<NavigationLinks />
+					<!-- Home About und mehr components unter /src/components/NavigationLinks -->
 				</nav>
 				<nav class="flex items-center justify-center gap-x-5">
 					<NavigationSocialBar />
+					<!-- Icons rechts von Home und co componetnts unter /src/components/NavigationSocialBar -->
 				</nav>
 			</header>
 			<article class="text-2xl px-4 py-8">
@@ -39,5 +42,5 @@ const { title, description } = Astro.props;
 	</body>
 </html>
 <style is:global>
-	@import "../styles/base.css";
-</style>
+	@import "../styles/base.css"; /* Kommentar in CSS und JavaScript */
+</style>						  <!-- Kommentar in HTML -->

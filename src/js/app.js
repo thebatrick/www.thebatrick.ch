@@ -1,3 +1,5 @@
+/* Array liste für Index.astro ist weiter unten */
+
 class PageHandler {
     constructor() {
         if(localStorage.getItem("theme") == "dark") {
@@ -5,6 +7,7 @@ class PageHandler {
     }
 
     this.setThemeIcon();
+    this.typeWriterManager();
 
     document.querySelector("#colorSwitch").addEventListener("click", () => {
         document.documentElement.classList.toggle("dark");
@@ -34,6 +37,50 @@ class PageHandler {
         <img src="/icons/moonwhite.svg" alt="moon" class="w-6 h-6" />
         `;
     }
+  }
+
+  typeWriterManager() {
+    let dynamicHeaderElement = document.querySelector("#dynamic-header-text");
+    if (dynamicHeaderElement === null) return; 
+
+                               /* Array liste für Index.astro */
+    let dynamicHeaderTextArray = ["Design", "Kaffee", "Pizza", "Njola"];
+    let i = 0;
+    let currentText = dynamicHeaderTextArray[i];
+    let currentWord = dynamicHeaderTextArray[i];
+    let isDeleting = false;
+
+
+    let typeWriter = () => {
+        currentWord = dynamicHeaderTextArray[i];
+
+        if(isDeleting) {
+            currentText = currentWord.substring(0, currentText.length - 1);
+        }
+
+        if (!isDeleting) {
+            currentText = currentWord.substring(0, currentText.length + 1);
+        }
+
+        dynamicHeaderElement.innerHTML = currentText;
+
+        if(!isDeleting && currentText === currentWord) {
+            isDeleting = true;
+            setTimeout(typeWriter, 3000);
+        } else if (isDeleting && currentText === "") {
+            isDeleting = false;
+            i++;
+
+            if(i === dynamicHeaderTextArray.length) {
+                i = 0;
+            }
+
+            setTimeout(typeWriter, 500);
+        }   else {
+            setTimeout(typeWriter, 100);
+        }
+    }
+    typeWriter();
   }
 }
 
