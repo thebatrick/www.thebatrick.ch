@@ -8,7 +8,10 @@ export default {
 				light: "#f5f5f5",
 				dark: "#1b1b1b",
 				deeppink: "#ff1493",
-			}
+			},
+			width: {
+				'tictactoe32.30rem': '32.30rem',
+			  },
 		},
 	},
 	plugins: [],

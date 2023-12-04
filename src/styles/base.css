@@ -4,18 +4,19 @@
 
 @layer base {
     h1 {
-        @apply inline-block text-6xl mb-8 
+        @apply text-4xl md:text-6xl mb-6 md:mb-12 
     }
 
     h2,
     h3 {
-        @apply inline-block text-4xl my-8;
+        @apply text-2xl md:text-4xl my-6 md:my-12;
     }
 
     h1::before,
     h2::before,
-    h3::before {
-        @apply inline-block mr-4 text-blue-700 dark:text-deeppink; 
+    h3::before,
+    h4::before {
+        @apply mr-4 text-blue-700 dark:text-deeppink; 
         content: "#";
     }
 
@@ -23,7 +24,7 @@
         @apply my-4 leading-relaxed;
     }
 
-    h1 + p {
+    #firstletter {
         @apply first-letter:text-6xl first-letter:font-bold;
     }
 
@@ -31,4 +32,48 @@
         @apply text-blue-700 dark:text-deeppink hover:underline;
     }
 
+    p > code {
+        @apply bg-blue-700 dark:bg-deeppink text-light dark:text-dark rounded-lg px-2 whitespace-nowrap;
+    }
+
+    /* Markdown */
+    #toc {
+        @apply xl:float-right xl:w-1/2 xl:ml-8 ;
+    }
+    #toc > ul {
+        @apply border-2 border-dark dark:border-light rounded-xl my-8 py-2 px-4 text-lg md:text-xl
+    }
+
+    #toc li {
+        @apply my-2 mx-4 list-disc text-blue-700 dark:text-deeppink
+    }
+
+    pre {
+        @apply text-lg md:text-xl my-8 p-3 rounded-xl;
+    }
+    /* page name */
+    
+    /* page name */
+
 }
+ 
+/* Swup Transition */
+
+/*
+.transition-fade {
+    transition: 0.4s;
+    opacity: 1;
+    transform: none;
+
+}
+
+html.is-animating .transition-fade {
+    opacity: 0;
+    transform: translateY(20px);
+}
+*/
+
+
+
+
+

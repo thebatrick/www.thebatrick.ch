@@ -6,6 +6,12 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
+  markdown: {
+    shikiConfig: {
+      theme: "one-dark-pro",
+      wrap: true,
+    }
+  },
   integrations: [tailwind({
     config: {
       applyBaseStyles: false,

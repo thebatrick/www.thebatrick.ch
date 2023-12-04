@@ -1,0 +1,47 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import { mainanimation } from '../js/transitions.js';
+import Header from '../components/Header.astro';
+import NavigationMobile from '../components/NavigationMobile.astro';
+import Footer from '../components/Footer.astro';
+
+const { title, description, keywords, author } = Astro.props.frontmatter
+---
+
+
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description} />
+        <meta name="author" content={ author } />
+        <meta name="keywords" content={ keywords } />
+        <meta name="robots" content="index, follow" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+		<ViewTransitions />
+	</head>
+	<body class="font-mono mb-20 md:mb-1 bg-light dark:bg-dark text-dark dark:text-light ">
+		<main class="relative md:container md:mx-auto w-full min-h-screen">
+			<!-- Header component under ../components/Header.astro -->
+			<Header />
+			<!-- -->
+			<article transition:animate={mainanimation} class="transition-fade text-lg md:text-2xl px-4 py-8">
+				<slot />
+			</article>
+			<div transition:animate={mainanimation}>
+				<Footer />
+			</div>
+			<!-- NavigationMobile component under ../components/NavigationMobil.astro -->
+			<NavigationMobile />
+			<!--  -->
+		</main>
+		<script src="../js/app.js"></script>
+	</body>
+</html>
+<style is:global>
+	@import "../styles/base.css";    /* Kommentar in CSS und JavaScript */
+	@import "../styles/styles.css";
+</style>						     <!-- Kommentar in HTML -->

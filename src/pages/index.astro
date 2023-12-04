@@ -5,13 +5,13 @@ import Button from '../components/Button.astro';
 
 
 import NjolaHome from '../images/njola02-removebg.png';
-import earthblender from '../images/earth02.png'
 --- 
 
 <Layout title="Startseite" description="Das ist meine Startseite">
-	<div class="flex flex-row justify-between items-center">
-		<div class="w-1/2 flex justify-center items-center py-10 ">
-			<Image 
+	<div class="flex flex-col xl:flex-row justify-between items-center">
+		<div class="w-3/4 sm:w-3/5 xl:w-1/2 flex justify-center items-center py-10 " >
+			<a href="/secret">
+			 <Image 
 			  src={NjolaHome}
 			  alt="Njola" 
 			  width={650} 
@@ -19,19 +19,22 @@ import earthblender from '../images/earth02.png'
 			  quality="80"
 			  decoding="async"
 			  loading="lazy"
-			  format="webp"  
-			/>
+			  format="webp" 
+			  class=""
+			  transition:name='imgindex'
+			 />
+		    </a>
 		</div>
-		<div class="w-1/2 flex flex-col justify-between items-start">
-			<div class="text-6xl mb-4">
-			  Visionen mit<br />
-			  Code und <span 
-			    id="dynamic-header-text"
-			    class="text-blue-700 dark:text-deeppink">Njola</span><br /> 
+		<div class="w-full xl:w-1/2 flex flex-col justify-between items-center  xl:items-start">
+			<div class="text-4xl md:text-6xl text-center xl:text-start mb-4">
+				Welten und Geschichten<br />
+				mit Fantasy<br /> und <span 
+			    id="dynamic-header-text" 
+			    class="text-blue-700 dark:text-deeppink">Leidenschaft</span><br /> <!-- das darüber muss das selbe sein wie das erste wort im Array ansonsten steht kurz das geschribene wort danach wird es direkt durch das erste Array wort ersetzt -->
 				<!-- Array liste ist unter /src/js/app.js -->
-			  zum Leben erwecken<br />
+				zum Leben erwecken<br />
 			</div>
-			<div class="mb-6 leading-relaxed">
+			<div class="mb-6 text-center xl:text-start leading-relaxed">
 				Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et  
 	
 			</div>
@@ -39,7 +42,9 @@ import earthblender from '../images/earth02.png'
 			  <Button 
 			    url="https://www.instagram.com/p/Cuy68QJtTb4/" 
 			    title="Njola" 
-			    external={true} 
+			    external={true}
+				reload={false} 
+				css="bg-dark dark:bg-light text-light dark:text-dark hover:border-dark dark:hover:border-light hover:text-dark dark:hover:text-light  hover:bg-transparent dark:hover:bg-transparent"
 			  />
 			  <a href="mailto:patrick.geissbuehlerph2404@gmail.com"
 			     title="Email" 
@@ -51,6 +56,9 @@ import earthblender from '../images/earth02.png'
 		    </div>
 		</div>
 	</div>
+	
+	<!-- Wird verwendet, dass die NavigationBar nicht verrutscht, opacity-0 dann ist der Text da. Er ist einfach nicht sichtbar, mit hidden würde es nichts bringen, weil der Text dann gar nicht da wäre. -->
+	<h1 transition:animate="none" class="opacity-0">opacity-0</h1>
 	
 </Layout>
 

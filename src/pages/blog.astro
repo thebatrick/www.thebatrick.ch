@@ -1,7 +1,97 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import { sortByDate } from "../utils/sortByDate.js"
+import { sortByABC } from "../utils/sortByABC.js"
+import Button from '../components/Button.astro';
+
+import { getCollection } from 'astro:content';
+const blogEntries = await getCollection("blog", ({ data }) => {
+	return data.draft !== true;
+});
 ---
 
-<Layout title="Welcome to Astro.">
-	<h1 class="text-6xl">Blog</h1>
+<Layout title="Blog">
+
+	<h1 id="blog">Blog</h1>
+	<p id="firstletter">
+		Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem.
+	</p>
+
+	<div class="flex items-center justify-between px-4 py-8 font-medium">
+		<div class="flex items-center justify-center gap-x-8 text-2xl">
+			<h2 class="">Die neusten Artikel</h2>
+		</div>
+		<div class="flex items-center justify-center gap-x-5">
+			<Button 
+			url="https://www.youtube.com/@thebatrick" 
+			title="Video Blog" 
+			external={true} 
+			reload={false}
+			css="bg-dark dark:bg-light text-light dark:text-dark hover:border-dark dark:hover:border-light hover:text-dark dark:hover:text-light  hover:bg-transparent dark:hover:bg-transparent"
+		  />
+		</div>
+	</div>
+	 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-8">
+		{
+			blogEntries.sort(sortByDate).slice(0, 4).map((blogPostEntry) => (
+				<div class="border-2 border-dark dark:border-light p-2 rounded-xl">
+			<a href={`/blog/${blogPostEntry.slug}`}>
+			 <Image 
+			  src={blogPostEntry.data.image.src}
+			  alt={blogPostEntry.data.image.alt}
+			  width={600} 
+			  height={450}
+			  quality="80"
+			  decoding="async"
+			  loading="lazy"
+			  format="webp" 
+			  class="rounded-md"
+			 />
+		  </a>
+		   <a href={`/blog/${blogPostEntry.slug}`}>
+		      <div class="px-2 py-4">{blogPostEntry.data.title}</div>
+			</a>
+			<div class="text-base px-2 pb-2">
+				{blogPostEntry.data.description}
+			</div>
+		  </div>	
+		 ))
+		}
+	</div>
+
+	<h2 class="pt-8">Alle Artikel <span class="ml-5">A-Z</span></h2>
+
+	<p>
+	
+	</p>
+
+	 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-8 py-8">
+		{
+			blogEntries.sort(sortByABC).slice().map((blogPostEntry) => (
+				<div class="border-2 border-dark dark:border-light p-2 rounded-xl">
+			<a href={`/blog/${blogPostEntry.slug}`}>
+			 <Image 
+			  src={blogPostEntry.data.image.src}
+			  alt={blogPostEntry.data.image.alt}
+			  width={600} 
+			  height={450}
+			  quality="80"
+			  decoding="async"
+			  loading="lazy"
+			  format="webp" 
+			  class="rounded-md"
+			 />
+		  </a>
+		   <a href={`/blog/${blogPostEntry.slug}`}>
+		      <div class="px-2 py-4">{blogPostEntry.data.title}</div>
+			</a>
+			<div class="text-base px-2 pb-2">
+				{blogPostEntry.data.description}
+			</div>
+		  </div>	
+		 ))
+		}
+	</div>
+
 </Layout>

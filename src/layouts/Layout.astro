@@ -1,11 +1,9 @@
 ---
-import NavigationLinks from '../components/NavigationLinks.astro';
-import NavigationSocialBar from '../components/NavigationSocialBar.astro';
-
-export interface Props {
-	title: string;
-	description?: string;
-}
+import { ViewTransitions, fade, slide } from 'astro:transitions';
+import { mainanimation } from '../js/transitions.js';
+import Header from "../components/Header.astro";
+import NavigationMobile from "../components/NavigationMobile.astro";
+import Footer from '../components/Footer.astro';
 
 const { title, description } = Astro.props;
 ---
@@ -20,27 +18,27 @@ const { title, description } = Astro.props;
 		<meta name="description" content={description} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{title}</title>
+		<ViewTransitions />
 	</head>
-	<body class="font-mono bg-dee dark:bg-dark text-dark dark:text-light ">
-		<main class="md:container md:mx-auto w-full min-h-screen">
-			<header class="flex items-center justify-between px-4 py-8 font-medium">
-				<nav class="flex items-center justify-center gap-x-8 text-2xl">
-					<NavigationLinks />
-					<!-- Home About und mehr components unter /src/components/NavigationLinks -->
-				</nav>
-				<nav class="flex items-center justify-center gap-x-5">
-					<NavigationSocialBar />
-					<!-- Icons rechts von Home und co componetnts unter /src/components/NavigationSocialBar -->
-				</nav>
-			</header>
-			<article class="text-2xl px-4 py-8">
+	<body class="font-mono mb-20 md:mb-1 bg-light dark:bg-dark text-dark dark:text-light ">
+		<main class="relative md:container md:mx-auto w-full min-h-screen">
+			<!-- Header component under ../components/Header.astro -->
+			 <Header />
+			<!-- -->
+			<article transition:animate={mainanimation} class=" text-lg md:text-2xl px-4 py-8">
 				<slot />
 			</article>
-			<footer></footer>
+			<div transition:animate={mainanimation}>
+			 <Footer />
+			</div>
+			<!-- NavigationMobile component under ../components/NavigationMobil.astro -->
+			<NavigationMobile />
+			<!--  -->
 		</main>
 		<script src="../js/app.js"></script>
 	</body>
 </html>
 <style is:global>
-	@import "../styles/base.css"; /* Kommentar in CSS und JavaScript */
-</style>						  <!-- Kommentar in HTML -->
+	@import "../styles/base.css";
+	@import "../styles/styles.css"; /* Kommentar in CSS und JavaScript */
+</style>						    <!-- Kommentar in HTML -->
