@@ -4,35 +4,35 @@ import NavigationSocialIcon from "./NavigationSocialIcon.astro"
 
 <!-- icon="name von https://icon-sets.iconify.design" -- title="name der angezeigt wird" target="link auf der selben seite öffnen=_self in neuem tab öffnen=_blank , css= hidden md:block blended das icon auf smartphone aus" -->
 <NavigationSocialIcon 
-  icon="lets-icons:e-mail" 
+  icon="ic:baseline-alternate-email" 
   url="mailto:patrick.geissbuehlerph2404@gmail.com" 
   title="Email"
   target="_self"
   css="" 
 />
 <NavigationSocialIcon 
-  icon="logos:whatsapp-icon" 
+  icon="fa-brands:whatsapp" 
   url="https://wa.me/41789642404/" 
   title="WhatsApp"
   target="_blank"
   css=""    
 />
 <NavigationSocialIcon 
-  icon="skill-icons:discord" 
+  icon="simple-icons:discord" 
   url="https://discordapp.com/users/thebatrick#6480" 
   title="Discord"
   target="_blank"
   css=""                     
 />
 <NavigationSocialIcon 
-  icon="skill-icons:instagram" 
+  icon="bi:instagram" 
   url="https://www.instagram.com/thebatrick/" 
   title="Instagram"
   target="_blank"
   css=""    
 />
 <NavigationSocialIcon 
-  icon="openmoji:youtube" 
+  icon="simple-icons:youtube" 
   url="https://www.youtube.com/@thebatrick" 
   title="Youtube"
   target="_blank"
@@ -45,13 +45,24 @@ import NavigationSocialIcon from "./NavigationSocialIcon.astro"
   target="_blank"
   css=""  
 />
-<NavigationSocialIcon 
-  icon="fluent-emoji-flat:bone" 
-  url="https://www.paypal.com/paypalme/thebatrick" 
-  title="Ein Knochen für Njola"
-  target="_blank"
-  css=""  
-  /> 
+
+ <div>
+    <a href="https://www.paypal.com/paypalme/thebatrick" 
+      target="_blank">
+      <img src={`/icons/coffee-loop.svg?dummy=${Math.random()}`}
+      alt="coffee" 
+      class="relative w-8 h-8 top-0 hover:-top-1 transition-[top] ease duration-300 dark:hidden block" 
+      title="Gib mir einen Kaffee aus"/>
+    </a>
+    <a href="https://www.paypal.com/paypalme/thebatrick" 
+    target="_blank">
+    <img src={`/icons/coffee-loop-white.svg?dummy=${Math.random()}`}
+    alt="coffee" 
+    class="relative w-8 h-8 top-0 hover:-top-1 transition-[top] ease duration-300 hidden dark:block" 
+    title="Gib mir einen Kaffee aus"/>
+  </a>
+  </div>
+
 <div id="colorSwitch" class="hover:cursor-pointer bg-dark dark:bg-light rounded-full p-1 ">
   <img src="/icons/moon02white.svg" alt="moon" class="w-6 h-6" />
 </div>
