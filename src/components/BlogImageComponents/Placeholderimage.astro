@@ -1,0 +1,16 @@
+---
+import { Image } from 'astro:assets';
+
+import placeholder from '../../images/blog/placeholder.png';
+---
+
+<!-- Bild mit Eigenschaften -->
+<div class="">
+    <Image 
+    src={placeholder}
+    alt="Njola" 
+    decoding="async"
+    loading="lazy" 
+    class="rounded-xl w-full h-auto"
+   />
+</div>

@@ -1,0 +1,143 @@
+---
+draft: false
+layout: ../../layouts/BlogLayout.astro
+publishedDate: 2000-04-24
+updatedDate: 2000-04-24
+author: Patrick Geissbühler
+title: Bilder Blog Template
+description: Beschreibung des Artikels copy and write
+keywords: [tags, tags, tags]
+image:
+  src: /images/blog/placeholder.png
+  alt: beschreibug des bildes
+---
+
+
+{/* bei image src: Bild pfad auswählen bild ändern */}
+{/* Dieses Template kopieren dann ausfüllen */}
+{/* draft: false damit die seite im build vorhanden ist */}
+
+
+import { Image } from 'astro:assets';
+import Button from "../../components/Button.astro";
+import PlaceholderImage from "../../components/BlogImageComponents/PlaceholderImage.astro"
+
+
+# Überschrift
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+{/* ```mit code endung z.B .js .css .html``` */}
+
+```.css
+class="text-deeppink"
+```
+
+{/* id= design /src/styles/base.css */}
+<div id="toc"> 
+
+<Image 
+			  src={frontmatter.image.src}
+			  alt={frontmatter.image.alt}
+			  width={3840} 
+			  height={2160}
+			  quality="80"
+			  decoding="async"
+			  loading="lazy"
+			  format="webp" 
+			  class="rounded-xl" 
+			/>
+
+
+{/* Liste der Überschriften. Durch Drücken auf die gewünschte Überschrift springt man direkt dahin. Bei der Überschrift # verwenden und mehrere # max.3 damit sie im Table of Contents eingerückt wird. */}
+
+- [Überschrift](#überschrift)
+	- [Überschrift 2](#überschrift-2)
+		- [Überschrift 3](#überschrift-3)
+		- [Überschrift 4](#überschrift-4)
+	- [Überschrift 5](#überschrift-5)
+	- [Überschrift 6](#überschrift-6)
+	- [Überschrift 7](#überschrift-7)
+	- [Überschrift 8](#überschrift-8)
+
+</div> 
+
+## Überschrift 2
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+
+{/* Button component importiert von ../../components/Button.astro */}
+<Button 
+			    url="https://www.instagram.com/p/Cuy68QJtTb4/" 
+			    title="Quelle Name" 
+			    external={true}
+				reload={false}
+				css="bg-dark dark:bg-light text-light dark:text-dark hover:border-dark dark:hover:border-light hover:text-dark dark:hover:text-light  hover:bg-transparent dark:hover:bg-transparent" 
+			  />
+
+### Überschrift 3
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+### Überschrift 4
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+<div class="mt-10 mb-10">
+
+## Überschrift 5
+
+<div class="xl:float-right xl:w-1/2 ml-5 xl:ml-8"> 
+{/* Bild Component für jedes bild eine eigene erstellen bzw. PlaceholderImage.astro kopieren und abändern und in blog markdown Importieren*/}
+<PlaceholderImage />
+
+</div>
+
+<div class="">
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</div>
+</div>
+
+## Überschrift 6
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+<div class="mt-10 mb-10">
+
+## Überschrift 7
+
+<div class="xl:float-left xl:w-1/2 mb-1 mr-5 xl:mr-8"> 
+{/* Bild Component für jedes bild eine eigene erstellen bzw. PlaceholderImage.astro kopieren und abändern */}
+<PlaceholderImage />
+
+</div>
+
+<div class="">
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</div>
+</div>
+
+## Überschrift 8
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+
+
+
+
+{/* Am schluss alle Kommentare löschen */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

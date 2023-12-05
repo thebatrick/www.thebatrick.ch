@@ -42,10 +42,8 @@ const blogEntries = await getCollection("blog", ({ data }) => {
 			  alt={blogPostEntry.data.image.alt}
 			  width={600} 
 			  height={450}
-			  quality="80"
 			  decoding="async"
-			  loading="lazy"
-			  format="webp" 
+			  loading="lazy" 
 			  class="rounded-md"
 			 />
 		  </a>
@@ -76,10 +74,8 @@ const blogEntries = await getCollection("blog", ({ data }) => {
 			  alt={blogPostEntry.data.image.alt}
 			  width={600} 
 			  height={450}
-			  quality="80"
 			  decoding="async"
 			  loading="lazy"
-			  format="webp" 
 			  class="rounded-md"
 			 />
 		  </a>
